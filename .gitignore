@@ -1,0 +1,6 @@
+# macOS
+.DS_Store
+
+# Certificates are available on request only, so keep them off the public
+# site (the original DCI certificate also contains your date of birth).
+assets/pdf_files/

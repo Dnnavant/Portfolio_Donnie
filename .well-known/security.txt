@@ -1,0 +1,6 @@
+# Security contact for this website (RFC 9116).
+# Found a security issue? Please report it through the contact form.
+Contact: https://dnnavant.github.io/#contact
+Expires: 2027-09-27T00:00:00.000Z
+Preferred-Languages: en, de
+Canonical: https://dnnavant.github.io/.well-known/security.txt

@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donnie Avant | IT Support &amp; Network Engineering</title>
+<meta name="description" content="Donnie Avant — IT support and network engineering professional in career transition, with a Full-Stack Web Development certificate and 8+ years of technical, quality, and client-facing experience.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>
+  // Apply a saved light/dark choice before the page paints (see js/script.js)
+  try {
+    var savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light' || savedTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+  } catch (e) {}
+</script>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="site-header">
+  <nav class="nav container">
+    <!--
+      LOGO: assets/images/DA_WebDev_Logo_nav.png (a small, cropped copy of
+      DA_WebDev_Logo.png), shown in a circle. To change it, replace that file
+      or point src at a new one. If the image can't load, "DA" text shows instead.
+    -->
+    <a href="#home" class="nav__brand" id="navBrand" aria-label="Donnie Avant, back to top" data-i18n-aria="ui.top">
+      <img class="nav__logo" id="navLogo" src="assets/images/DA_WebDev_Logo_nav.png" alt="DA Web Dev logo" width="60" height="60">
+      <span class="nav__brand-text">DA</span>
+    </a>
+    <ul class="nav__links" id="navLinks">
+      <li><a data-i18n="nav.about" href="#about">About</a></li>
+      <li><a data-i18n="nav.skills" href="#skills">Skills</a></li>
+      <!-- Projects link hidden until the Projects section is ready -->
+      <!-- <li><a href="#projects">Projects</a></li> -->
+      <li><a data-i18n="nav.experience" href="#experience">Experience</a></li>
+      <!-- Phone menu copy of "Get in Touch" (the desktop one sits on the right) -->
+      <li class="nav__menu-cta"><a data-i18n="nav.cta" href="#contact" class="nav__cta">Get in Touch</a></li>
+    </ul>
+    <div class="nav__tools">
+      <a data-i18n="nav.cta" href="#contact" class="nav__cta nav__cta--desktop">Get in Touch</a>
+      <button type="button" class="nav__tool" id="langToggle" lang="de" aria-label="Auf Deutsch anzeigen">DE</button>
+      <button type="button" class="nav__tool nav__tool--icon" id="themeToggle" aria-label="Switch to dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </div>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" data-i18n-aria="ui.menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <p data-i18n="hero.eyebrow" class="hero__eyebrow">Open to IT Support, Network Engineering &amp; M365 Admin roles</p>
+        <h1 data-i18n="hero.title" class="hero__title"><span class="hero__name">Hello, I'm Donnie Avant.</span><br><span class="hero__tagline">I am self-driven, always learning, and building my future in <span class="highlight">IT.</span></span></h1>
+        <p data-i18n="hero.subtitle" class="hero__subtitle">
+          I'm pivoting from eight years of hands-on technical trade work into IT, bringing a
+          Full-Stack Web Development certificate, a fast-learning mindset, and real
+          project-management experience with me. I'm targeting IT support, network engineering,
+          and M365 administration roles where I can start simple, build real experience, and grow.
+          What I'm looking for most is a team willing to invest in training and development.
+        </p>
+        <div class="hero__actions">
+          <!-- Put this back once the Projects section is live: -->
+          <!-- <a href="#projects" class="btn btn--primary">View My Projects</a> -->
+          <a data-i18n="hero.btnContact" href="#contact" class="btn btn--primary">Get In Touch</a>
+          <a data-i18n="hero.btnBackground" href="#experience" class="btn btn--outline">My Background</a>
+          <!-- RESUME: save your PDF as assets/resume.pdf and this button appears
+               automatically on the live site. -->
+          <a data-i18n="hero.btnResume" href="assets/resume.pdf" class="btn btn--ghost" id="resumeBtn" download hidden>Download Resume</a>
+        </div>
+      </div>
+
+      <!--
+        PHOTO: your headshot lives at assets/images/profile_image.jpg.
+        To change it, replace that file (square-ish photos crop best).
+        If the file is missing, the frame shows your initials instead.
+      -->
+      <div class="hero__media">
+        <div class="hero__photo" id="heroPhoto">
+          <img src="assets/images/profile_image.jpg" alt="Photo of Donnie Avant" data-i18n-alt="hero.photoAlt" id="profilePhoto">
+          <span class="hero__photo-fallback" aria-hidden="true">DA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="container">
+      <p data-i18n="about.eyebrow" class="section__eyebrow">About Me</p>
+      <h2 data-i18n="about.title" class="section__title">From the shop floor to the server room.</h2>
+      <div class="about__grid">
+        <div class="about__text">
+          <p data-i18n="about.p1">
+            I spent over eight years as a technical service specialist in the automotive coatings
+            and protective film industry, running quality audits, training technicians, and
+            managing technical documentation across the US and Germany. In 2024, I completed a
+            <strong>Full-Stack Web Developer certificate</strong> through the Digital Career
+            Institute (DCI) in Germany, and I'm now applying that same discipline — systematic
+            troubleshooting, careful documentation, and a drive to get things right the first
+            time — to a career in <strong>IT support and network engineering</strong>.
+          </p>
+          <p data-i18n="about.p2">
+            While studying web development, I discovered I enjoy the infrastructure side most:
+            troubleshooting, keeping systems running, and supporting the people who use them. I'm
+            now building on what I learned — HTML, JavaScript, Git, debugging, and how the web
+            actually works — to focus on <strong>IT support, network engineering, and Microsoft
+            365 administration</strong>. I'm a fast learner, detail-oriented, and eager to be
+            trained on the way your team does things.
+          </p>
+          <p data-i18n="about.p3">
+            I'm bilingual (English/German), hold dual US/German citizenship, and I'm comfortable
+            working across technical and non-technical audiences — something I built directly by
+            translating technical issues for clients and training apprentices for years.
+          </p>
+          <p data-i18n="about.location" class="about__location">
+            <strong>Based in Germany</strong> — open to roles in Germany/EU and remote US.
+          </p>
+        </div>
+        <div class="about__facts">
+          <div class="fact">
+            <span class="fact__number">8+</span>
+            <span data-i18n="about.fact1" class="fact__label">Years hands-on technical experience</span>
+          </div>
+          <div class="fact">
+            <span class="fact__number">2</span>
+            <span data-i18n="about.fact2" class="fact__label">Languages — English &amp; German</span>
+          </div>
+          <div class="fact">
+            <span class="fact__number">2</span>
+            <span data-i18n="about.fact3" class="fact__label">Countries worked in — US &amp; Germany</span>
+          </div>
+          <div class="fact">
+            <span class="fact__number">2024</span>
+            <span data-i18n="about.fact4" class="fact__label">Full-Stack Web Dev Certificate, DCI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="section section--alt" id="skills">
+    <div class="container">
+      <p data-i18n="nav.skills" class="section__eyebrow">Skills</p>
+      <h2 data-i18n="skills.title" class="section__title">What I bring to an IT team.</h2>
+
+      <h3 data-i18n="skills.techTitle" class="subsection__title">Technical Skills</h3>
+      <!-- Only list what you can confidently discuss in an interview.
+           Update "Currently Learning" as you earn certificates. -->
+      <div class="skills__grid">
+        <div class="skill-card">
+          <h4 data-i18n="skills.os">Operating Systems</h4>
+          <p data-i18n="skills.osText">Windows 10/11, basic macOS and Linux (command line, file permissions)</p>
+        </div>
+        <div class="skill-card">
+          <h4 data-i18n="skills.net">Networking</h4>
+          <p data-i18n="skills.netText">TCP/IP, DNS, DHCP, subnetting, VLAN basics; ping, tracert, nslookup</p>
+        </div>
+        <div class="skill-card">
+          <h4>Microsoft 365</h4>
+          <p data-i18n="skills.m365Text">User &amp; license management, Exchange Online, Teams, Entra ID (Azure AD) basics</p>
+        </div>
+        <div class="skill-card">
+          <h4 data-i18n="skills.tools">Tools &amp; Platforms</h4>
+          <p data-i18n="skills.toolsText">Git &amp; GitHub, VS Code, PowerShell basics, ticketing systems (Jira, Freshdesk)</p>
+        </div>
+        <div class="skill-card">
+          <h4 data-i18n="skills.web">Web Development</h4>
+          <p>HTML, CSS/SCSS, JavaScript, React, Node.js, Express, MongoDB, REST APIs</p>
+        </div>
+        <div class="skill-card">
+          <h4 data-i18n="skills.learning">Currently Learning</h4>
+          <p data-i18n="skills.learningText">CompTIA A+ (target Q1 2027)</p>
+        </div>
+      </div>
+
+      <h3 data-i18n="transfer.title" class="subsection__title">From Wrapping Cars to Supporting Tech</h3>
+      <p data-i18n="transfer.intro" class="subsection__intro">Eight years as a professional vehicle wrap and PPF technician built
+      habits that carry straight over to IT work.</p>
+      <div class="transfer__grid">
+        <article class="transfer-card">
+          <div class="transfer-card__from">
+            <span class="transfer-card__label" data-i18n="transfer.from">In the wrap shop</span>
+            <h4 data-i18n="transfer.1.h">Troubleshooting &amp; quality control</h4>
+            <p data-i18n="transfer.1.p">Traced lifting, bubbles and adhesion problems back to their root cause, and standardized QC checklists that cut material waste by 40%.</p>
+          </div>
+          <div class="transfer-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
+          <div class="transfer-card__to">
+            <span class="transfer-card__label" data-i18n="transfer.to">In IT</span>
+            <p data-i18n="transfer.1.it">Systematic troubleshooting, root-cause analysis &amp; verifying fixes before closing tickets</p>
+          </div>
+        </article>
+        <article class="transfer-card">
+          <div class="transfer-card__from">
+            <span class="transfer-card__label" data-i18n="transfer.from">In the wrap shop</span>
+            <h4 data-i18n="transfer.2.h">Precision &amp; planning</h4>
+            <p data-i18n="transfer.2.p">Measure twice, cut once: every vehicle planned panel by panel, working to tolerances where 1&nbsp;mm off means redoing the job.</p>
+          </div>
+          <div class="transfer-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
+          <div class="transfer-card__to">
+            <span class="transfer-card__label" data-i18n="transfer.to">In IT</span>
+            <p data-i18n="transfer.2.it">Careful change planning and accurate configuration, cabling &amp; documentation</p>
+          </div>
+        </article>
+        <article class="transfer-card">
+          <div class="transfer-card__from">
+            <span class="transfer-card__label" data-i18n="transfer.from">In the wrap shop</span>
+            <h4 data-i18n="transfer.3.h">Software, tools &amp; hardware</h4>
+            <p data-i18n="transfer.3.p">Ran a digital plotting system (XPEL DAP) and cutting plotters daily, worked with precision tools, and kept up with new films and techniques.</p>
+          </div>
+          <div class="transfer-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
+          <div class="transfer-card__to">
+            <span class="transfer-card__label" data-i18n="transfer.to">In IT</span>
+            <p data-i18n="transfer.3.it">Learning new software fast; hardware installs, drivers &amp; workstation setup</p>
+          </div>
+        </article>
+        <article class="transfer-card">
+          <div class="transfer-card__from">
+            <span class="transfer-card__label" data-i18n="transfer.from">In the wrap shop</span>
+            <h4 data-i18n="transfer.4.h">Standards &amp; responsibility</h4>
+            <p data-i18n="transfer.4.p">Installed to XPEL certification and manufacturer warranty standards, and was trusted with clients' high-value vehicles every day.</p>
+          </div>
+          <div class="transfer-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
+          <div class="transfer-card__to">
+            <span class="transfer-card__label" data-i18n="transfer.to">In IT</span>
+            <p data-i18n="transfer.4.it">Following vendor documentation &amp; compliance; handling sensitive systems and data responsibly</p>
+          </div>
+        </article>
+        <article class="transfer-card">
+          <div class="transfer-card__from">
+            <span class="transfer-card__label" data-i18n="transfer.from">In the wrap shop</span>
+            <h4 data-i18n="transfer.5.h">Customers &amp; training</h4>
+            <p data-i18n="transfer.5.p">Walked clients through options in plain language, set clear expectations, and trained new installers and apprentices hands-on.</p>
+          </div>
+          <div class="transfer-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
+          <div class="transfer-card__to">
+            <span class="transfer-card__label" data-i18n="transfer.to">In IT</span>
+            <p data-i18n="transfer.5.it">Help desk service, end-user training &amp; knowledge-base guides</p>
+          </div>
+        </article>
+        <article class="transfer-card">
+          <div class="transfer-card__from">
+            <span class="transfer-card__label" data-i18n="transfer.from">In the wrap shop</span>
+            <h4 data-i18n="transfer.6.h">Deadlines, teamwork &amp; ownership</h4>
+            <p data-i18n="transfer.6.p">Hit fixed pickup times, coordinated installers and suppliers on fleet projects, tracked stock and job costs, and ran my own shop, DA Wraps.</p>
+          </div>
+          <div class="transfer-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
+          <div class="transfer-card__to">
+            <span class="transfer-card__label" data-i18n="transfer.to">In IT</span>
+            <p data-i18n="transfer.6.it">Working to SLAs, clean team handoffs, asset &amp; license tracking, and owning outcomes</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <!--
+    HIDDEN FOR NOW. To show it again:
+      1. Remove the word "hidden" from the <section> tag below.
+      2. Un-comment the Projects link in the nav and the "View My Projects" button in the hero.
+      3. Swap the backgrounds back: Experience gets "section section--alt",
+         Contact gets plain "section" (so the shaded sections keep alternating).
+  -->
+  <section class="section" id="projects" hidden>
+    <div class="container">
+      <p class="section__eyebrow">Projects</p>
+      <h2 class="section__title">What I've built.</h2>
+      <p class="section__intro">
+        I'm actively building projects to demonstrate these skills — check back often, or
+        <a href="#contact">get in touch</a> to see what I'm working on right now.
+      </p>
+
+      <!--
+        EDIT: Replace each placeholder card below with a real project once it's ready.
+        Ideas that pair well with your background:
+          1. A simple IT ticket-tracker web app (CRUD app — mirrors your defect-logging system work)
+          2. A network/IT-asset inventory dashboard
+          3. A script that automates a repetitive task (e.g. a QC checklist generator)
+          4. A home-lab network diagram + write-up (VLANs, firewall rules, etc.)
+      -->
+      <div class="projects__grid">
+        <article class="project-card">
+          <span class="project-card__status">In Progress</span>
+          <h3>Project Title</h3>
+          <p>Short description of what this project does and what problem it solves.
+          <em>[edit: fill in once ready]</em></p>
+          <div class="project-card__tags">
+            <span>Tech</span><span>Stack</span><span>Here</span>
+          </div>
+          <div class="project-card__links">
+            <a href="#" class="project-card__link">GitHub Repo</a>
+            <a href="#" class="project-card__link">Live Demo</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="project-card__status">In Progress</span>
+          <h3>Project Title</h3>
+          <p>Short description of what this project does and what problem it solves.
+          <em>[edit: fill in once ready]</em></p>
+          <div class="project-card__tags">
+            <span>Tech</span><span>Stack</span><span>Here</span>
+          </div>
+          <div class="project-card__links">
+            <a href="#" class="project-card__link">GitHub Repo</a>
+            <a href="#" class="project-card__link">Live Demo</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="project-card__status">Planned</span>
+          <h3>Project Title</h3>
+          <p>Short description of what this project does and what problem it solves.
+          <em>[edit: fill in once ready]</em></p>
+          <div class="project-card__tags">
+            <span>Tech</span><span>Stack</span><span>Here</span>
+          </div>
+          <div class="project-card__links">
+            <a href="#" class="project-card__link">GitHub Repo</a>
+            <a href="#" class="project-card__link">Live Demo</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE / EDUCATION ============ -->
+  <section class="section" id="experience">
+    <div class="container">
+      <p data-i18n="exp.eyebrow" class="section__eyebrow">Background</p>
+      <h2 data-i18n="exp.title" class="section__title">Education &amp; Experience</h2>
+
+      <p data-i18n="exp.hint" class="section__intro timeline__hint">Hover over an entry for details, or click it to keep it open.</p>
+
+      <!--
+        TIMELINE ENTRIES: each entry shows its details on hover, and stays open
+        when clicked until the X is pressed. To add an entry, copy one <li class="tl-item">
+        block, give its details <div> a new unique id, and use that same id in
+        the button's aria-controls. Add or edit the <li> bullets to change the details.
+      -->
+      <div class="timeline-grid">
+        <div>
+          <h3 data-i18n="edu.title" class="subsection__title">Education &amp; Certifications</h3>
+          <!-- CERT BADGES: as you earn certificates (CompTIA, Microsoft, etc.), copy an
+               entry to the top of this list. To show a Credly badge image, add this as the
+               first line inside its <button>:
+                 <img src="assets/images/badge-comptia-a.png" alt="CompTIA A+ badge" class="timeline__badge">
+          -->
+          <ul class="timeline">
+            <li class="tl-item">
+              <button type="button" class="tl-item__head" aria-expanded="false" aria-controls="tl-xpel">
+                <span data-i18n="edu.xpel.t" class="tl-item__title">XPEL Certified PPF Installer</span>
+                <span data-i18n="edu.xpel.m" class="timeline__meta">XPEL — Oct 2024</span>
+                <span class="tl-item__chevron" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+              </button>
+              <div class="tl-item__details" id="tl-xpel">
+                <div class="tl-item__panel">
+                  <button type="button" class="tl-item__close" aria-label="Close details" data-i18n-aria="ui.close"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+                  <ul>
+                  <li data-i18n="edu.xpel.1">Certified to install XPEL paint protection film to manufacturer standards</li>
+                  <li data-i18n="edu.xpel.2">Daily use of the XPEL DAP digital pattern and plotting software</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="tl-item">
+              <button type="button" class="tl-item__head" aria-expanded="false" aria-controls="tl-dci">
+                <span data-i18n="edu.dci.t" class="tl-item__title">Full-Stack Web Developer Certificate</span>
+                <span data-i18n="edu.dci.m" class="timeline__meta">Digital Career Institute (DCI), Germany — Jan 2023 – Mar 2024</span>
+                <span class="tl-item__chevron" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+              </button>
+              <div class="tl-item__details" id="tl-dci">
+                <div class="tl-item__panel">
+                  <button type="button" class="tl-item__close" aria-label="Close details" data-i18n-aria="ui.close"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+                  <ul>
+                  <li data-i18n="edu.dci.1">Official program: <em>Weiterbildung zum Web- und Softwareentwickler</em> (web &amp; software developer), 1,700+ hours of training</li>
+                  <li data-i18n="edu.dci.2">Front end: HTML, CSS, SCSS, Bootstrap, JavaScript, DOM manipulation and React</li>
+                  <li data-i18n="edu.dci.3">Back end: Node.js &amp; npm, REST APIs with Express, MongoDB, security &amp; authentication</li>
+                  <li data-i18n="edu.dci.4">Foundations: Linux, Git &amp; GitHub, object-oriented and functional programming concepts</li>
+                  <li data-i18n="edu.dci.5">Final project, “The Gamers” (224 hours): project management and hands-on development</li>
+                  <li data-i18n="edu.dci.6">Also included job-related German language training and soft skills</li>
+                  <li class="tl-item__doc">
+                    <span data-i18n="edu.dci.certNote">Certificate available on request.</span>
+                    <a href="#contact">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v12H5.2L4 17.2z"/><path d="M8 9h8M8 12h5"/></svg>
+                      <span data-i18n="edu.dci.certLink">Request it</span>
+                    </a>
+                  </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="tl-item">
+              <button type="button" class="tl-item__head" aria-expanded="false" aria-controls="tl-meister">
+                <span data-i18n="edu.meister.t" class="tl-item__title">Master Craftsman Certificate — Werbetechniker Meister</span>
+                <span data-i18n="edu.meister.m" class="timeline__meta">Handwerkskammer Düsseldorf, Germany — Oct 2021</span>
+                <span class="tl-item__chevron" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+              </button>
+              <div class="tl-item__details" id="tl-meister">
+                <div class="tl-item__panel">
+                  <button type="button" class="tl-item__close" aria-label="Close details" data-i18n-aria="ui.close"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+                  <ul>
+                  <li data-i18n="edu.meister.1">German master craftsman (Meister) qualification in sign and advertising technology</li>
+                  <li data-i18n="edu.meister.2">Covers advanced technical practice, business management and training apprentices</li>
+                  <li data-i18n="edu.meister.3">Completed in Germany, in German</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="tl-item">
+              <button type="button" class="tl-item__head" aria-expanded="false" aria-controls="tl-vsu">
+                <span data-i18n="edu.vsu.t" class="tl-item__title">B.A./B.S., Business Management</span>
+                <span class="timeline__meta">Virginia State University, USA — 2010</span>
+                <span class="tl-item__chevron" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+              </button>
+              <div class="tl-item__details" id="tl-vsu">
+                <div class="tl-item__panel">
+                  <button type="button" class="tl-item__close" aria-label="Close details" data-i18n-aria="ui.close"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+                  <ul>
+                  <li data-i18n="edu.vsu.1">Foundation in management, operations and business communication</li>
+                  <li data-i18n="edu.vsu.2">Put into practice running my own business, DA Wraps</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="tl-item">
+              <button type="button" class="tl-item__head" aria-expanded="false" aria-controls="tl-ase">
+                <span data-i18n="edu.ase.t" class="tl-item__title">ASE Certification, Auto Body Technology</span>
+                <span class="timeline__meta">Virginia Beach Technical &amp; Career Education Center, USA — 2003–2005</span>
+                <span class="tl-item__chevron" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+              </button>
+              <div class="tl-item__details" id="tl-ase">
+                <div class="tl-item__panel">
+                  <button type="button" class="tl-item__close" aria-label="Close details" data-i18n-aria="ui.close"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+                  <ul>
+                  <li data-i18n="edu.ase.1">Auto body repair training: surface preparation, refinishing and collision repair</li>
+                  <li data-i18n="edu.ase.2">Where I first learned hands-on, detail-oriented technical work</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 data-i18n="job.title" class="subsection__title">Relevant Experience</h3>
+          <ul class="timeline">
+            <li class="tl-item">
+              <button type="button" class="tl-item__head" aria-expanded="false" aria-controls="tl-alpha">
+                <span data-i18n="job.alpha.t" class="tl-item__title">PPF Installer / Werbetechniker</span>
+                <span data-i18n="job.alpha.m" class="timeline__meta">Alpha Grp, Germany — 2026–Present</span>
+                <span data-i18n="job.alpha.s" class="tl-item__summary">PPF, vinyl wrap and digital print installation; acting regional quality-control lead.</span>
+                <span class="tl-item__chevron" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+              </button>
+              <div class="tl-item__details" id="tl-alpha">
+                <div class="tl-item__panel">
+                  <button type="button" class="tl-item__close" aria-label="Close details" data-i18n-aria="ui.close"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+                  <ul>
+                  <li data-i18n="job.alpha.1">Install paint protection film (PPF) on high-value vehicles to manufacturer certification standards</li>
+                  <li data-i18n="job.alpha.2">Carry out full and partial vehicle wraps in cast vinyl, including color changes and commercial graphics</li>
+                  <li data-i18n="job.alpha.3">Install large-format digitally printed graphics, matching panels and seams to the design</li>
+                  <li data-i18n="job.alpha.4">Prepare vehicles for installation: decontamination wash, degreasing and clay treatment, and careful removal and reinstallation of trim, badges, handles and lights</li>
+                  <li data-i18n="job.alpha.5">Operate a digital plotting system daily to cut precise, vehicle-specific film patterns</li>
+                  <li data-i18n="job.alpha.6">Serve as acting regional technical quality-control lead: set production benchmarks and inspect finished work before handover</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="tl-item">
+              <button type="button" class="tl-item__head" aria-expanded="false" aria-controls="tl-rva">
+                <span data-i18n="job.rva.t" class="tl-item__title">Operations &amp; Workflow Advisor</span>
+                <span class="timeline__meta">RVA Graphics &amp; Wraps, USA — 2024</span>
+                <span data-i18n="job.rva.s" class="tl-item__summary">Cut material waste 40% through standardized QC.</span>
+                <span class="tl-item__chevron" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+              </button>
+              <div class="tl-item__details" id="tl-rva">
+                <div class="tl-item__panel">
+                  <button type="button" class="tl-item__close" aria-label="Close details" data-i18n-aria="ui.close"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+                  <ul>
+                  <li data-i18n="job.rva.1">Standardized QC checklists and inspections, cutting material waste by 40%</li>
+                  <li data-i18n="job.rva.2">Built a defect-logging system from scratch</li>
+                  <li data-i18n="job.rva.3">Centralized project data in a CRM to cut revision cycles</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="tl-item">
+              <button type="button" class="tl-item__head" aria-expanded="false" aria-controls="tl-dawraps">
+                <span data-i18n="job.da.t" class="tl-item__title">Founder &amp; Lead Technician</span>
+                <span data-i18n="job.da.m" class="timeline__meta">DA Wraps (Independent), Germany &amp; USA — 2022–2025</span>
+                <span data-i18n="job.da.s" class="tl-item__summary">Ran an independent technical service business end to end.</span>
+                <span class="tl-item__chevron" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+              </button>
+              <div class="tl-item__details" id="tl-dawraps">
+                <div class="tl-item__panel">
+                  <button type="button" class="tl-item__close" aria-label="Close details" data-i18n-aria="ui.close"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+                  <ul>
+                  <li data-i18n="job.da.1">Consulted with clients and set clear project expectations</li>
+                  <li data-i18n="job.da.2">Negotiated with vendors and suppliers</li>
+                  <li data-i18n="job.da.3">Handled job costing and quoting</li>
+                  <li data-i18n="job.da.4">Delivered the technical work and final quality control</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <p data-i18n="job.note" class="timeline__note">Full trade work history available on request or via LinkedIn.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section section--alt" id="contact">
+    <div class="container contact">
+      <p data-i18n="contact.eyebrow" class="section__eyebrow">Contact</p>
+      <h2 data-i18n="contact.title" class="section__title">Let's talk.</h2>
+      <p data-i18n="contact.intro" class="section__intro">
+        I'm actively looking for IT support, help desk, or junior network engineering
+        opportunities. Send me a message below — I'd love to hear from you.
+      </p>
+      <!--
+        CONTACT FORM: sends messages to your email through Formspree
+        (https://formspree.io), so your address never appears on this page.
+        The action URL below is your Formspree form's endpoint. To switch to a
+        different form, replace it with that form's endpoint URL.
+      -->
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/mdekpwng" method="POST" novalidate>
+        <div class="contact-form__row">
+          <div class="contact-form__field">
+            <label for="cfName" data-i18n="form.name">Name</label>
+            <input type="text" id="cfName" name="name" autocomplete="name" required maxlength="100">
+            <p class="contact-form__error" id="cfNameError"></p>
+          </div>
+          <div class="contact-form__field">
+            <label for="cfEmail" data-i18n="form.email">Your email</label>
+            <input type="email" id="cfEmail" name="email" autocomplete="email" required maxlength="200">
+            <p class="contact-form__error" id="cfEmailError"></p>
+          </div>
+        </div>
+        <div class="contact-form__field">
+          <label for="cfCompany"><span data-i18n="form.company">Company</span> <span class="contact-form__optional" data-i18n="form.optional">(optional)</span></label>
+          <input type="text" id="cfCompany" name="company" autocomplete="organization" maxlength="150">
+        </div>
+        <div class="contact-form__field">
+          <label for="cfMessage" data-i18n="form.message">Message</label>
+          <textarea id="cfMessage" name="message" rows="5" required minlength="20" maxlength="5000"></textarea>
+          <p class="contact-form__error" id="cfMessageError"></p>
+        </div>
+
+        <!-- Spam trap: hidden from people, bots fill it in and get rejected -->
+        <input type="text" name="_gotcha" class="contact-form__trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="_subject" value="New message from your portfolio site">
+
+        <p class="contact-form__privacy" data-i18n="form.privacy">Your details are only used to reply to your message. See the <a href="privacy.html">Privacy Policy</a>.</p>
+        <button type="submit" class="btn btn--primary contact-form__submit" data-i18n="form.send">Send Message</button>
+        <p class="contact-form__status" id="cfStatus" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="contact__social-title" data-i18n="contact.social">Or connect with me on</p>
+      <div class="contact__social">
+        <a href="https://www.linkedin.com/in/donnie-r-avant/" class="contact__icon" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a href="https://github.com/Dnnavant" class="contact__icon" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .32.21.69.82.57A12 12 0 0 0 12 .3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="year"></span> Donnie Avant. <span data-i18n="footer.built">Built with HTML, CSS &amp; JavaScript — hosted on GitHub Pages.</span></p>
+    <p class="site-footer__legal">
+      <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+      <span aria-hidden="true">·</span>
+      <a href="imprint.html" data-i18n="footer.imprint">Legal Notice</a>
+    </p>
+  </div>
+</footer>
+
+<script src="js/i18n-de.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
